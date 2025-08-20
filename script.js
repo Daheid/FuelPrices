@@ -4,9 +4,12 @@ const tableBody = document.querySelector("#resultsTable tbody")
 form.addEventListener("submit", async (e) => {
   e.preventDefault()
 
-  const fecha = document.getElementById("campo1").value
-  const area = "all"
-  const producto = "all"
+  const fechaa = new Date()
+  const fecha =
+    document.getElementById("campo1").value ||
+    fechaa.toISOString().split("T")[0]
+  const area = document.getElementById("campo2").value
+  const producto = document.getElementById("campo3").value
 
   const url = "https://fuelpricesapi.nelsoncarrero.dev/api/v1/prices/filter/eia"
 
@@ -52,6 +55,10 @@ form.addEventListener("submit", async (e) => {
       `
       tableBody.appendChild(row)
     })
+
+    if (json.data.length === 0) {
+      tableBody.innerHTML = `<tr><td colspan="4">No se encontraron datos</td></tr>`
+    }
   } catch (error) {
     console.error("Error al obtener datos:", error)
     tableBody.innerHTML = `<tr><td colspan="4">Error al cargar los datos</td></tr>`
