@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulario centrado</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card" aria-labelledby="title">
+        <h1 id="title">Fuel Prices API</h1>
+        <p class="sub">Consulta los precios de combustible en EU.</p>
+
+        <form id="demoForm" novalidate>
+          <div class="field">
+            <label class="label" for="campo1">Fecha</label>
+            <input
+              class="input"
+              type="date"
+              id="campo1"
+              name="campo1"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label class="label" for="campo2">Área</label>
+            <select class="input" id="campo2" name="campo2" required>
+              <option value="">Selecciona un área</option>
+              <option value="all">Todas</option>
+              <option value="area1">Área 1</option>
+              <option value="area2">Área 2</option>
+              <option value="area3">Área 3</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label class="label" for="campo3">Producto</label>
+            <select class="input" id="campo3" name="campo3" required>
+              <option value="">Selecciona un producto</option>
+              <option value="all">Todos</option>
+              <option value="producto1">Producto 1</option>
+              <option value="producto2">Producto 2</option>
+              <option value="producto3">Producto 3</option>
+            </select>
+          </div>
+
+          <!-- Botón de filtro -->
+          <div class="actions">
+            <button type="submit">Filtrar</button>
+          </div>
+        </form>
+
+        <!-- Tabla de resultados -->
+        <section class="results">
+          <table id="resultsTable">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Área</th>
+                <th>Producto</th>
+                <th>Precio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí se llenarán los resultados -->
+            </tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
