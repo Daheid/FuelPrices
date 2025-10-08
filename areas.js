@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     // Endpoint GET que devuelve las áreas
     const url =
-      "https://fuelpricesapi.nelsoncarrero.dev/api/v1/areas/filter/eia"
+      "https://api.fuelprices.nelsoncarrero.dev/api/v1/areas/filter/eia"
     const response = await fetch(url, { method: "GET" })
     const json = await response.json()
 

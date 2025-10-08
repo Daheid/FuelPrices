@@ -75,7 +75,8 @@ form.addEventListener("submit", async (e) => {
   const area = document.getElementById("campo2").value
   const producto = document.getElementById("campo3").value
 
-  const url = "https://fuelpricesapi.nelsoncarrero.dev/api/v1/prices/filter/eia"
+  const url =
+    "https://api.fuelprices.nelsoncarrero.dev/api/v1/prices/filter/eia"
 
   try {
     const response = await fetch(url, {
